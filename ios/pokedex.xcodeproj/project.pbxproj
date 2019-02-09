@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -35,12 +36,10 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* pokedexTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* pokedexTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
-		3F62748E220EA2D000081284 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F627484220EA29E00081284 /* Lottie.framework */; };
 		3F62748F220EA2D000081284 /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F627484220EA29E00081284 /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		611213800DAF4E4D80A9674A /* libLottieReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC6BC4C2C98B4678BDCACAD8 /* libLottieReactNative.a */; };
 		672B1507D9E24497A5D4DD26 /* libLottie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6725F9A1DD41D2BE4C8B78 /* libLottie.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		8ECD7F9044BA4246A3F07E28 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DC77360DAFB4C6590E48981 /* Lottie.framework */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
@@ -438,10 +437,8 @@
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
-				3F62748E220EA2D000081284 /* Lottie.framework in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				8ECD7F9044BA4246A3F07E28 /* Lottie.framework in Frameworks */,
 				672B1507D9E24497A5D4DD26 /* libLottie.a in Frameworks */,
 				611213800DAF4E4D80A9674A /* libLottieReactNative.a in Frameworks */,
 			);
@@ -606,7 +603,6 @@
 				7DC77360DAFB4C6590E48981 /* Lottie.framework */,
 				6F6725F9A1DD41D2BE4C8B78 /* libLottie.a */,
 				FC6BC4C2C98B4678BDCACAD8 /* libLottieReactNative.a */,
-				F31E4E8632FE476480E9DBA2 /* libRNGestureHandler.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
