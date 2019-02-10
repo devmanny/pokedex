@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
  * the entire pokemon list and saving it in
  * the store while displaying a loading animation,
  * as well as checking if it was
- * previously downloaded and going
+ * previously downloaded it going
  * directly to home
  *
  * @class Loading

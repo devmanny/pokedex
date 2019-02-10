@@ -16,6 +16,7 @@ module.exports = {
         "quotes": [ "error", "single" ],
         "semi": [ "error", "always" ],
         "react/jsx-indent": [ "error", 4 ],
+        "react/jsx-indent-props": [ "error", 4 ],
         "react/jsx-filename-extension": 0,
         "react-native/no-unused-styles": ["error"],
         "react-native/split-platform-components": ["error"],

@@ -9,7 +9,7 @@ import Loading from '../screens/Loading';
 import PokemonDetails from '../screens/PokemonDetails';
 import Settings from '../screens/Settings';
 
-import Logo from '../components/logo';
+import Logo from '../components/Logo';
 
 import { redColor, whiteColor } from '../util';
 
