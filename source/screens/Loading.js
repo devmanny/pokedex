@@ -69,7 +69,7 @@ class Loading extends PureComponent {
                         if (id && id.length > 0) {
                             return {
                                 ...pokemon,
-                                name: capitalizeFirst(pokemon.name),
+                                name: capitalizeFirst(pokemon.name).split('-').join(' '),
                                 id: id[1],
                             };
                         }
