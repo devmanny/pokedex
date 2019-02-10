@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         width: 95, // 189*70
         height: 35,
+        marginHorizontal: 10,
         alignSelf: 'center',
     },
 });

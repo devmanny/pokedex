@@ -48,6 +48,10 @@ const AppStackNav = createStackNavigator(
         navigationOptions: () => ({
             headerTitle: Logo,
             gesturesEnabled: true,
+            headerTitleStyle: {
+                textAlign: 'center',
+                alignSelf: 'center',
+            },
             headerStyle: {
                 backgroundColor: redColor,
             },

@@ -10,6 +10,9 @@ export default (state = initialState, action) => {
     case 'SEARCH_POKEMON':
         return { ...state, search: action.payload };
 
+    case 'SET_SELECTED_POKEMON':
+        return { ...state, selected: action.payload };
+
     case 'ADD_POKEMON_DATA':
         return {
             ...state,
