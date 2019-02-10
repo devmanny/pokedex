@@ -1,6 +1,11 @@
 import React from 'react';
-import LottieView from 'lottie-react-native';
-import Intro from '../assets/animations/intro';
+import { SafeAreaView, View, Text } from 'react-native';
 
-const Home = () => <LottieView source={Intro} autoPlay loop />;
+const Home = () => (
+    <SafeAreaView>
+        <View>
+            <Text>hello</Text>
+        </View>
+    </SafeAreaView>
+);
 export default Home;
