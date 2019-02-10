@@ -1,5 +1,6 @@
 const initialState = {
-    list: {},
+    list: [],
+    details: {},
     selected: null,
     search: '',
 };
@@ -27,10 +28,7 @@ export default (state = initialState, action) => {
     case 'SET_POKEMON_LIST':
         return {
             ...state,
-            list: {
-                ...state.list,
-                ...action.payload,
-            },
+            list: action.payload,
         };
 
     default:
