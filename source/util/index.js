@@ -33,3 +33,10 @@ export const indexing = (array, key) => array.reduce((accumulator, iterator) => 
 }, {});
 
 export const TRY_AGAIN_TEXT = 'Try again';
+
+/**
+ * autoCapitalize first letter of a string
+ *
+ * @param {*} string
+ */
+export const capitalizeFirst = string => string.charAt(0).toUpperCase() + string.slice(1);
