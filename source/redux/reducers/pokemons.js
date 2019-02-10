@@ -28,7 +28,8 @@ export default (state = initialState, action) => {
     case 'SET_POKEMON_LIST':
         return {
             ...state,
-            list: action.payload,
+            list: action.payload.raw,
+            details: action.payload.indexed,
         };
 
     default:

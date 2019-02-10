@@ -57,7 +57,7 @@ class Loading extends PureComponent {
 
                     setPokemonList({
                         raw: responseList,
-                        pokemons: indexedPokemonList,
+                        indexed: indexedPokemonList,
                     });
                 })
                 .catch((err) => {
