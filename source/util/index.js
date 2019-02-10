@@ -21,6 +21,12 @@ export const redTabColor = redColor;
 export const semiBlackColor = 'rgba(0,0,0,0.7)';
 export const whiteColor = '#FFFFFF';
 
+/**
+ * converts an array of objects into an object for fast access
+ *
+ * @param {*} array of objects
+ * @param {*} key to create an index / list
+ */
 export const indexing = (array, key) => array.reduce((accumulator, iterator) => {
     accumulator[iterator[key]] = iterator;
     return accumulator;

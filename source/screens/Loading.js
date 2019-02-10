@@ -21,6 +21,18 @@ const styles = StyleSheet.create({
     },
 });
 
+/**
+ * This screen is responsible for downloading
+ * the entire pokemon list and saving it in
+ * the store while displaying a loading animation,
+ * as well as checking if it was
+ * previously downloaded and going
+ * directly to home
+ *
+ * @class Loading
+ * @extends {PureComponent}
+ */
+
 class Loading extends PureComponent {
     constructor(props) {
         super(props);
@@ -40,18 +52,19 @@ class Loading extends PureComponent {
         if (pokemonList.length === 0) {
             request.get('/pokemon/?offset=0&limit=5000')
                 .then((response) => {
-                    // this pattern is to get the pokemon ID of the URL of its image
-                    const pokemonPattern = /https:\/\/pokeapi\.co\/api\/v2\/pokemon\/(\d+)\//;
                     const securePokemonListFromRequest = lodash.get(response, 'data.results', []);
-
                     if (securePokemonListFromRequest.length === 0) {
                         setTimeout(() => goToHome(), 1000);
                         return;
                     }
 
-                    const responseList = securePokemonListFromRequest.map((pokemon) => {
+                    // this pattern is to get the pokemon ID of the URL of its image
+                    const pokemonPattern = /https:\/\/pokeapi\.co\/api\/v2\/pokemon\/(\d+)\//;
+
+                    // adding a pokemon Id to every item
+                    const responseListWithId = securePokemonListFromRequest.map((pokemon) => {
                         const id = pokemonPattern.exec(pokemon.url);
-                        if (id) {
+                        if (id && id.length > 0) {
                             return {
                                 ...pokemon,
                                 id: id[1],
@@ -59,14 +72,16 @@ class Loading extends PureComponent {
                         }
                         return pokemon;
                     });
-                    const indexedPokemonList = indexing(responseList, 'id');
+
+                    const indexedPokemonList = indexing(responseListWithId, 'id');
+
                     setPokemonList({
-                        raw: responseList,
+                        raw: responseListWithId,
                         indexed: indexedPokemonList,
                     });
                 })
-                .catch((err) => {
-                    console.error(err.toString());
+                .catch(() => {
+                    setTimeout(() => goToHome(), 1000);
                 });
         } else {
             setTimeout(() => goToHome(), 3000);
@@ -104,12 +119,19 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+    /**
+     * Dispatch an action to Redux to set entire pokemon list
+     */
     setPokemonList: (pokemons) => {
         dispatch({
             type: 'SET_POKEMON_LIST',
             payload: pokemons,
         });
     },
+
+    /**
+     * Dispatch an action to React-Navigation (redux) to go to Home
+     */
     goToHome: () => {
         dispatch(
             NavigationActions.navigate({
