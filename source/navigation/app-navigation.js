@@ -18,9 +18,6 @@ const AppTabsNav = createBottomTabNavigator(
     },
     {
         initialRouteName: 'Home',
-        navigationOptions: {
-            tabBarVisible: true,
-        },
     },
 );
 
@@ -35,8 +32,9 @@ const AppStackNav = createStackNavigator(
             // headerBackTitle: null,
         } : {
             // headerBackTitle: 'Back',
-            // gesturesEnabled: true,
-            // headerTintColor: redColor,
+            gesturesEnabled: true,
+            headerBackground: redColor,
+            headerTintColor: redColor,
         }),
     },
 );
