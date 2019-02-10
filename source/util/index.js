@@ -14,6 +14,7 @@ export const redColorTransparent = Platform.select({
 });
 
 export const blackColor = '#000000';
+export const transparentColor = 'transparent';
 export const grayColor = '#78909c';
 export const grayClearColor = '#F4f4f4';
 export const grayTabColor = '#C8C7CC';

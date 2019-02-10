@@ -6,7 +6,7 @@ import {
 import { string } from 'prop-types';
 import Touchable from 'react-native-platform-touchable';
 import SpritePokemon from './SpritePokemon';
-import { whiteColor, capitalizeFirst } from '../util';
+import { whiteColor } from '../util';
 
 const { width } = Dimensions.get('window');
 

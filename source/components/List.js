@@ -26,6 +26,7 @@ const List = (props) => {
 
     return (
         <FlatList
+            keyboardShouldPersistTaps="handled"
             style={styles.flatList}
             data={pokemonList}
             numColumns={3}

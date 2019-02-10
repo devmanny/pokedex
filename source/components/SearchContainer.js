@@ -8,7 +8,6 @@ import { whiteColor } from '../util';
 const styles = StyleSheet.create({
     container: {
         backgroundColor: whiteColor,
-        height: 40,
         marginHorizontal: -5,
     },
 });
