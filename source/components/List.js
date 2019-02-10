@@ -1,14 +1,19 @@
 import React from 'react';
 import lodash from 'lodash';
 import { shape, arrayOf, func } from 'prop-types';
-import { FlatList, Alert } from 'react-native';
+import { FlatList, StyleSheet, Alert } from 'react-native';
 import { connect } from 'react-redux';
 
 import Card from './Card';
 import NoContent from './NoContent';
 import request from '../util/request';
-import { indexing } from '../util';
+import { indexing, capitalizeFirst } from '../util';
 
+const styles = StyleSheet.create({
+    flatList: {
+        paddingTop: 5,
+    },
+});
 
 const List = (props) => {
     const { pokemonList, fetchPokemonList } = props;
@@ -21,8 +26,9 @@ const List = (props) => {
 
     return (
         <FlatList
-            // style={styles.flatList}
+            style={styles.flatList}
             data={pokemonList}
+            numColumns={3}
             keyExtractor={item => item.id}
             renderItem={({ item }) => (
                 <Card pokemonId={item.id} />
@@ -64,6 +70,7 @@ const mapDispatchToProps = dispatch => ({
                     if (id && id.length > 0) {
                         return {
                             ...pokemon,
+                            name: capitalizeFirst(pokemon.name),
                             id: id[1],
                         };
                     }

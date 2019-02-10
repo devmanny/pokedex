@@ -10,7 +10,9 @@ import LottieView from 'lottie-react-native';
 import lodash from 'lodash';
 import { NavigationActions } from 'react-navigation';
 
-import { whiteColor, indexing, redColor } from '../util';
+import {
+    whiteColor, indexing, redColor, capitalizeFirst,
+} from '../util';
 import Intro from '../assets/animations/intro';
 import request from '../util/request';
 
@@ -67,6 +69,7 @@ class Loading extends PureComponent {
                         if (id && id.length > 0) {
                             return {
                                 ...pokemon,
+                                name: capitalizeFirst(pokemon.name),
                                 id: id[1],
                             };
                         }
