@@ -47,9 +47,17 @@ List.propTypes = {
     fetchPokemonList: func,
 };
 
-const mapStateToProps = state => ({
-    pokemonList: state.pokemons.list,
-});
+const mapStateToProps = (state) => {
+    let pokemonList = state.pokemons.list;
+
+    if (state.pokemons.search !== '') {
+        pokemonList = state.pokemons.list.filter(pokemon => new RegExp(state.pokemons.search, 'i').test(pokemon.name));
+    }
+
+    return ({
+        pokemonList,
+    });
+};
 
 const mapDispatchToProps = dispatch => ({
     fetchPokemonList: () => {

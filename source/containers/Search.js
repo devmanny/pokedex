@@ -7,17 +7,8 @@ import SearchContainer from '../components/SearchContainer';
 import SmartInput from './SmartInput';
 
 class Search extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            search: props.search,
-        };
-    }
-
     handleChangeText = (text) => {
         const { dispatch } = this.props;
-
-        console.warn(text);
 
         dispatch({
             type: 'SEARCH_POKEMON',
