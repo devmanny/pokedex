@@ -1,6 +1,7 @@
 import { Platform } from 'react-native';
 
-export const API_DOMAIN = '---';
+export const API_PATH = 'https://pokeapi.co/api/v2';
+export const IMAGES_PATH = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon';
 
 export const redColor = Platform.select({
     android: '#FC123E',
@@ -19,3 +20,8 @@ export const grayTabColor = '#C8C7CC';
 export const redTabColor = redColor;
 export const semiBlackColor = 'rgba(0,0,0,0.7)';
 export const whiteColor = '#FFFFFF';
+
+export const indexing = (array, key) => array.reduce((accumulator, iterator) => {
+    accumulator[iterator[key]] = iterator;
+    return accumulator;
+}, {});
