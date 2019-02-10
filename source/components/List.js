@@ -52,7 +52,10 @@ const mapStateToProps = (state) => {
     let pokemonList = state.pokemons.list;
 
     if (state.pokemons.search !== '') {
-        pokemonList = state.pokemons.list.filter(pokemon => new RegExp(state.pokemons.search, 'i').test(pokemon.name));
+        pokemonList = state.pokemons.list.filter((pokemon) => {
+            const regex = new RegExp(state.pokemons.search, 'i');
+            return regex.test(pokemon.name) || regex.test(pokemon.id);
+        });
     }
 
     return ({
