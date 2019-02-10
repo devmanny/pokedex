@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "ios": "react-native run-ios --simulator=\"iPhone XS\" & react-native start --reset-cache",
+    "open": "react-native run-android & react-native run-ios --simulator=\"iPhone XS\" & react-native start --reset-cache",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest"
   },

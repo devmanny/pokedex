@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import {
+    SafeAreaView, StatusBar, Platform, StyleSheet,
+} from 'react-native';
 import { connect } from 'react-redux';
 import {
     func, shape, string, arrayOf,
@@ -8,9 +10,9 @@ import LottieView from 'lottie-react-native';
 import lodash from 'lodash';
 import { NavigationActions } from 'react-navigation';
 
-import { whiteColor, indexing } from '../util';
+import { whiteColor, indexing, redColor } from '../util';
 import Intro from '../assets/animations/intro';
-import request from '../request';
+import request from '../util/request';
 
 const styles = StyleSheet.create({
     conatiner: {
@@ -23,11 +25,18 @@ class Loading extends PureComponent {
     constructor(props) {
         super(props);
         this.getPokemonList();
+        this.setStatusBarStyle();
+    }
+
+    setStatusBarStyle = () => {
+        StatusBar.setBarStyle('light-content');
+        if (Platform.OS === 'android') {
+            StatusBar.setBackgroundColor(redColor);
+        }
     }
 
     getPokemonList = () => {
         const { goToHome, pokemonList, setPokemonList } = this.props;
-
         if (pokemonList.length === 0) {
             request.get('/pokemon/?offset=0&limit=5000')
                 .then((response) => {
@@ -42,26 +51,22 @@ class Loading extends PureComponent {
 
                     const responseList = securePokemonListFromRequest.map((pokemon) => {
                         const id = pokemonPattern.exec(pokemon.url);
-
                         if (id) {
                             return {
                                 ...pokemon,
                                 id: id[1],
                             };
                         }
-
                         return pokemon;
                     });
-
                     const indexedPokemonList = indexing(responseList, 'id');
-
                     setPokemonList({
                         raw: responseList,
                         indexed: indexedPokemonList,
                     });
                 })
                 .catch((err) => {
-                    console.warn(err.toString());
+                    console.error(err.toString());
                 });
         } else {
             setTimeout(() => goToHome(), 3000);
@@ -94,12 +99,9 @@ Loading.propTypes = {
     ),
 };
 
-const mapStateToProps = (state) => {
-    console.warn(state.pokemons);
-    return ({
-        pokemonList: state.pokemons.list,
-    });
-};
+const mapStateToProps = state => ({
+    pokemonList: state.pokemons.list,
+});
 
 const mapDispatchToProps = dispatch => ({
     setPokemonList: (pokemons) => {

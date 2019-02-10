@@ -9,7 +9,9 @@ import Loading from '../screens/Loading';
 import PokemonDetails from '../screens/PokemonDetails';
 import Settings from '../screens/Settings';
 
-import { redColor } from '../util';
+import Logo from '../components/logo';
+
+import { redColor, whiteColor } from '../util';
 
 const AppTabsNav = createBottomTabNavigator(
     {
@@ -18,6 +20,7 @@ const AppTabsNav = createBottomTabNavigator(
     },
     {
         initialRouteName: 'Home',
+
     },
 );
 
@@ -27,14 +30,14 @@ const AppStackNav = createStackNavigator(
         PokemonDetails,
     },
     {
-        navigationOptions: ({ navigation }) => (navigation.state.routeName === 'Tabs' ? {
-            // header: null,
-            // headerBackTitle: null,
-        } : {
+        navigationOptions: () => ({
             // headerBackTitle: 'Back',
+            headerTitle: Logo,
             gesturesEnabled: true,
-            headerBackground: redColor,
-            headerTintColor: redColor,
+            headerStyle: {
+                backgroundColor: redColor,
+            },
+            headerTintColor: whiteColor,
         }),
     },
 );
