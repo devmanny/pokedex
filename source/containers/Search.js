@@ -1,36 +1,62 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import { arrayOf, shape } from 'prop-types';
+import {
+    arrayOf, string, shape, func,
+} from 'prop-types';
 import { connect } from 'react-redux';
+import SearchContainer from '../components/SearchContainer';
+import SmartInput from './SmartInput';
 
 class Search extends Component {
     constructor(props) {
         super(props);
-        console.log(props);
+        this.state = {
+            search: props.search,
+        };
+    }
+
+    handleChangeText = (text) => {
+        const { dispatch } = this.props;
+
+        console.warn(text);
+
+        dispatch({
+            type: 'SEARCH_POKEMON',
+            payload: text,
+        });
     }
 
     render() {
-        const { pokemonList } = this.props;
+        const { pokemonList, search } = this.props;
 
         if (pokemonList.length === 0) {
             return null;
         }
 
         return (
-            <View />
+            <SearchContainer>
+                <SmartInput
+                    value={search}
+                    onChangeText={this.handleChangeText}
+                />
+            </SearchContainer>
         );
     }
 }
 
 Search.defaultProps = {
     pokemonList: [],
+    dispatch: func,
+    search: '',
 };
 
 Search.propTypes = {
     pokemonList: arrayOf(shape({})),
+    dispatch: func,
+    search: string,
 };
 
 const mapStateToProps = state => ({
+    search: state.pokemons.search,
     pokemonList: state.pokemons.list,
 });
 

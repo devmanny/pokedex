@@ -82,6 +82,8 @@ class Loading extends PureComponent {
                         raw: responseListWithId,
                         indexed: indexedPokemonList,
                     });
+
+                    setTimeout(() => goToHome(), 3000);
                 })
                 .catch(() => {
                     setTimeout(() => goToHome(), 4000);

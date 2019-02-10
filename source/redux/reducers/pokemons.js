@@ -7,7 +7,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
     switch (action.type) {
-    case 'SEARCH':
+    case 'SEARCH_POKEMON':
         return { ...state, search: action.payload };
 
     case 'ADD_POKEMON_DATA':
