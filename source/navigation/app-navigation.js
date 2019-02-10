@@ -20,6 +20,7 @@ const AppTabsNav = createBottomTabNavigator(
         Home: {
             screen: Home,
             navigationOptions: {
+                tabBarTestID: 'Home', // to test
                 tabBarIcon: PokemonIcon,
                 tabBarLabel: 'Pokemons',
             },
@@ -27,6 +28,7 @@ const AppTabsNav = createBottomTabNavigator(
         Settings: {
             screen: Settings,
             navigationOptions: {
+                tabBarTestID: 'Settings', // to test
                 tabBarIcon: SettingsIcon,
                 tabBarLabel: 'Settings',
             },
@@ -34,7 +36,6 @@ const AppTabsNav = createBottomTabNavigator(
     },
     {
         initialRouteName: 'Home',
-
     },
 );
 
@@ -45,7 +46,6 @@ const AppStackNav = createStackNavigator(
     },
     {
         navigationOptions: () => ({
-            // headerBackTitle: 'Back',
             headerTitle: Logo,
             gesturesEnabled: true,
             headerStyle: {
