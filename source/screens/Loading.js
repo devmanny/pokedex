@@ -81,7 +81,7 @@ class Loading extends PureComponent {
                     });
                 })
                 .catch(() => {
-                    setTimeout(() => goToHome(), 1000);
+                    setTimeout(() => goToHome(), 4000);
                 });
         } else {
             setTimeout(() => goToHome(), 3000);

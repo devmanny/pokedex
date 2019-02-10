@@ -31,3 +31,6 @@ export const indexing = (array, key) => array.reduce((accumulator, iterator) => 
     accumulator[iterator[key]] = iterator;
     return accumulator;
 }, {});
+
+export const TRY_AGAIN_TEXT = 'Try again'
+;

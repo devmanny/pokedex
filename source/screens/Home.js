@@ -1,14 +1,13 @@
 import React from 'react';
-import { SafeAreaView, View, Text } from 'react-native';
 
 import List from '../components/List';
+import Search from '../containers/Search';
+import LayoutVertical from '../containers/LayoutVertical';
 
 const Home = () => (
-    <SafeAreaView>
-        <View>
-            <Text>Search</Text>
-        </View>
+    <LayoutVertical>
+        <Search />
         <List />
-    </SafeAreaView>
+    </LayoutVertical>
 );
 export default Home;
