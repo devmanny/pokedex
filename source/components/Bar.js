@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
     Text, Image, View, StyleSheet, Dimensions,
 } from 'react-native';

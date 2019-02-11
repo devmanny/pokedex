@@ -70,8 +70,6 @@ class PokemonDetails extends Component {
     render() {
         const { data, name, language } = this.props;
 
-        console.log(data);
-
         if (!data) {
             return <LoadingComponent />;
         }
