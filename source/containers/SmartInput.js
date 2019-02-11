@@ -64,6 +64,16 @@ class SmartInput extends Component {
         onChangeText(value);
     }
 
+    getPlaceholder = () => {
+        const placeholders = {
+            en: 'Enter a Pokemon name or number',
+            es: 'Escribe el nombre o el numero de un Pokemon',
+        };
+
+        const { language } = this.props;
+        return placeholders[language];
+    }
+
     render() {
         const { value } = this.state;
         return (
@@ -74,6 +84,7 @@ class SmartInput extends Component {
                 />
 
                 <TextInput
+                    placeholder={this.getPlaceholder()}
                     onSubmitEditing={this.handleSubmit}
                     value={value}
                     clearButtonMode="while-editing"
@@ -93,14 +104,17 @@ class SmartInput extends Component {
 SmartInput.defaultProps = {
     onChangeText: () => {},
     search: '',
+    language: 'en',
 };
 
 SmartInput.propTypes = {
     onChangeText: func,
     search: string,
+    language: string,
 };
 
 const mapStateToProps = state => ({
+    language: state.settings.language,
     search: state.pokemons.search,
 });
 

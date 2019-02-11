@@ -60,9 +60,7 @@ class PokemonDetails extends Component {
                     }, 2000);
                 }))
             .catch(() => {
-                dispatch(StackActions.push({
-                    routeName: 'PokemonDetails',
-                }));
+                dispatch(StackActions.pop());
                 Alert.alert('', 'I think you\'re offline');
             });
     }

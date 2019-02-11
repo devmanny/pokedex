@@ -18,7 +18,18 @@ const SpritePokemon = (props) => {
         realSize = (width / 3) - 40;
     }
     const uri = `${IMAGES_PATH}/${pokemonId}.png`;
-    return (<Image style={[styles.sprite, { width: realSize, height: realSize }]} source={{ uri }} />);
+    return (
+        <Image
+            style={[
+                styles.sprite,
+                { width: realSize, height: realSize },
+            ]}
+            source={{
+                uri,
+                cache: 'force-cache',
+            }}
+        />
+    );
 };
 
 SpritePokemon.defaultProps = {
