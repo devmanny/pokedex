@@ -20,7 +20,10 @@ export default (state = initialState, action) => {
                 ...state.details,
                 [action.payload.id]: {
                     ...state.details[action.payload.id],
-                    data: action.payload.data,
+                    data: {
+                        ...action.payload.data,
+                        ...action.payload.extra,
+                    },
                 },
             },
         };

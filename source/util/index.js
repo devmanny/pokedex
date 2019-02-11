@@ -33,6 +33,12 @@ export const indexing = (array, key) => array.reduce((accumulator, iterator) => 
     return accumulator;
 }, {});
 
+export const indexingNested = (array, key1, key2) => array.reduce((accumulator, iterator) => {
+    const languageName = iterator[key1][key2];
+    accumulator[languageName] = iterator;
+    return accumulator;
+}, {});
+
 export const TRY_AGAIN_TEXT = 'Try again';
 
 /**

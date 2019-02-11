@@ -1,32 +1,34 @@
 import React from 'react';
 import { Image, StyleSheet, Dimensions } from 'react-native';
-import { string } from 'prop-types';
+import { string, number, oneOfType } from 'prop-types';
 import { IMAGES_PATH } from '../util';
 
 const { width } = Dimensions.get('window');
 
-const size = (width / 3) - 40;
-
 const styles = StyleSheet.create({
     sprite: {
-        width: size,
-        height: size,
         resizeMode: 'contain',
     },
 });
 
 const SpritePokemon = (props) => {
-    const { pokemonId } = props;
+    const { pokemonId, size } = props;
+    let realSize = size;
+    if (!size) {
+        realSize = (width / 3) - 40;
+    }
     const uri = `${IMAGES_PATH}/${pokemonId}.png`;
-    return (<Image style={styles.sprite} source={{ uri }} />);
+    return (<Image style={[styles.sprite, { width: realSize, height: realSize }]} source={{ uri }} />);
 };
 
 SpritePokemon.defaultProps = {
     pokemonId: '1',
+    size: (width / 3) - 40,
 };
 
 SpritePokemon.propTypes = {
-    pokemonId: string,
+    pokemonId: oneOfType([string, number]),
+    size: number,
 };
 
 export default SpritePokemon;
