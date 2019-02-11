@@ -43,7 +43,7 @@ class PokemonDetails extends Component {
         }
 
         request.get(`/pokemon/${pokemonSelected}/`)
-            .then(response => request.get(`/pokemon-species/${pokemonSelected}/`)
+            .then(response => request.get(response.data.species.url)
                 .then((responseExtra) => {
                     const extra = responseExtra.data;
                     extra.flavor_text_entries = indexingNested(extra.flavor_text_entries, 'language', 'name');
