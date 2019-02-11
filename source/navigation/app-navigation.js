@@ -9,7 +9,7 @@ import Loading from '../screens/Loading';
 import PokemonDetails from '../screens/PokemonDetails';
 import Settings from '../screens/Settings';
 
-import Logo from '../components/Logo';
+import Logo from '../components/PokemonLogo';
 import PokemonIcon from '../components/PokemonIcon';
 import SettingsIcon from '../components/SettingsIcon';
 
