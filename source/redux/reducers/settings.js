@@ -1,29 +1,15 @@
 const initialState = {
     colors: {},
-    language: 'en',
-    languages: { 
-        'en': {
-            name: "en",
-        }
-    }
+    language: 'En',
+    languages: ['En', 'Es'],
 };
 
 export default (state = initialState, action) => {
-  switch (action.type) {
+    switch (action.type) {
+    case 'SET_LANGUAGE':
+        return { ...state };
 
-  case 'SEARCH':
-      return { ...state };
-
-  case 'ADD_CONDOMINIUM':
-      return { ...state, list: { ...state.list, [action.payload._id]: action.payload } };
-
-  case 'SET_CONDOMINIUM':
-      return { ...state, selected: action.payload };
-
-  case 'SET_CONDOMINIUM_LIST':
-      return { ...state, list: { ...state.list, ...action.payload } };
-
-  default:
-      return state;
-  }
+    default:
+        return state;
+    }
 };
