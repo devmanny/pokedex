@@ -6,7 +6,7 @@ import { createReactNavigationReduxMiddleware } from 'react-navigation-redux-hel
 import reducer from './reducers';
 
 const persistConfig = {
-    key: 'pokedex-dev-10',
+    key: 'pokedex-dev-11',
     storage,
     blacklist: ['navigation'],
 };

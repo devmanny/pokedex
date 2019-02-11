@@ -76,6 +76,7 @@ class SmartInput extends Component {
                 <TextInput
                     onSubmitEditing={this.handleSubmit}
                     value={value}
+                    clearButtonMode="while-editing"
                     style={styles.input}
                     onChangeText={this.handleChangeText}
                 />
