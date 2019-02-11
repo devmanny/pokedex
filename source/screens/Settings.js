@@ -5,7 +5,6 @@ import {
     Button, SafeAreaView, StyleSheet, ScrollView, View, Text,
 } from 'react-native';
 import { whiteColor } from '../util';
-import SettingsIcon from '../components/SettingsIcon';
 
 const styles = StyleSheet.create({
     safeAreaView: {
