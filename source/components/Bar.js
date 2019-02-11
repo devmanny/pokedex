@@ -52,11 +52,13 @@ const styles = StyleSheet.create({
 });
 
 const Bar = ({ data }) => {
-    const pixels = data.base_stat * 200 / barSize;
+    const baseStat = Math.min(data.base_stat, 200);
+    const pixels = baseStat * 200 / barSize;
     return (
         <View style={styles.row}>
             <View style={styles.statName}>
                 <Text
+                    testID="bar-label-name"
                     numberOfLines={1}
                 >
                     {data.stat.name.toUpperCase()}
@@ -74,9 +76,7 @@ const Bar = ({ data }) => {
                         { left: pixels },
                     ]}
                     >
-                        <Text>
-                            {data.base_stat}
-                        </Text>
+                        <Text testID="bar-value">{String(baseStat)}</Text>
                     </View>
                 </View>
             </View>
