@@ -10,8 +10,9 @@ import { StackActions } from 'react-navigation';
 import request from '../util/request';
 import Intro from '../assets/animations/intro';
 import PokemonData from '../components/PokemonData';
-import { whiteColor, indexingNested } from '../util';
 import PokemonStatistics from '../components/PokemonStatistics';
+
+import { whiteColor, indexingNested } from '../util';
 
 const LoadingComponent = () => <LottieView source={Intro} autoPlay loop />;
 
