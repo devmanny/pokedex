@@ -17,12 +17,18 @@ Hello! I'm Manuel Vargas and I've created this project to show the benefits of r
 ## Instalation
 
 Clone the repo:
+
 `git clone https://github.com/devmanny/pokedex`
+
 `cd pokedex`
+
 `yarn install`
 
+
 Link some packages (optional):
+
 `react-native link lottie-ios;`
+
 `react-native link lottie-react-native;`
 
 ## Execution
