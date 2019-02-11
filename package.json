@@ -1,6 +1,10 @@
 {
   "name": "pokedex",
   "version": "0.0.1",
+  "author": {
+    "name": "Manuel Vargas",
+    "email": "im@devmanny.io"
+  },
   "private": true,
   "scripts": {
     "open": "react-native run-android & react-native run-ios --simulator=\"iPhone XS\" & react-native start --reset-cache",
@@ -23,9 +27,17 @@
     "redux-persist": "^5.10.0"
   },
   "devDependencies": {
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "jest-enzyme": "^7.0.1",
+    "jsdom": "^13.2.0",
+    "@babel/core": "^7.2.2",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "24.1.0",
+    "babel-jest": "^24.1.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react-native": "5.0.2",
     "eslint": "^5.13.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
@@ -33,7 +45,9 @@
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-native": "^3.6.0",
     "jest": "24.1.0",
+    "jsdom-global": "^3.0.2",
     "metro-react-native-babel-preset": "0.51.1",
+    "react-dom": "^16.8.1",
     "react-test-renderer": "16.6.3"
   },
   "jest": {
