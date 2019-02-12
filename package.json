@@ -9,7 +9,9 @@
   "scripts": {
     "open": "react-native run-android & react-native run-ios --simulator=\"iPhone XS\" & react-native start --reset-cache",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "axios": "^0.18.0",
